@@ -18,7 +18,7 @@ export default function AboutPage() {
             Klikblox adalah media berita independen Indonesia pertama yang berfokus pada universe Roblox.
           </p>
           <p>
-            Kami hadir dengan semangat "Free Voice, Real News, Unfiltered" untuk memberikan informasi yang akurat, mendalam, dan tanpa sensor mengenai segala hal yang terjadi di dalam ekosistem Roblox, khususnya bagi komunitas pemain dan kreator di Indonesia.
+            Kami hadir dengan semangat &quot;Free Voice, Real News, Unfiltered&quot; untuk memberikan informasi yang akurat, mendalam, dan tanpa sensor mengenai segala hal yang terjadi di dalam ekosistem Roblox, khususnya bagi komunitas pemain dan kreator di Indonesia.
           </p>
           <h2 className="font-oswald text-3xl font-bold text-white mt-12 mb-6">Misi Kami</h2>
           <p>

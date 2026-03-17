@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, Search } from 'lucide-react';
 
 export default function Navbar() {
@@ -9,8 +10,27 @@ export default function Navbar() {
           <button className="md:hidden text-white hover:text-brand-red transition-colors">
             <Menu size={24} />
           </button>
-          <Link href="/" className="font-oswald text-3xl font-black tracking-tighter flex items-center">
-            klikbl<span className="inline-block w-5 h-5 bg-brand-red mx-[2px] rounded-sm transform rotate-3"></span>x
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/logo.png" 
+              alt="Klikblox Logo" 
+              width={150} 
+              height={40} 
+              className="h-8 w-auto object-contain"
+              priority
+              onError={(e) => {
+                // Fallback to text if image fails to load
+                const target = e.target as HTMLElement;
+                target.style.display = 'none';
+                const parent = target.parentElement;
+                if (parent) {
+                  const textLogo = document.createElement('span');
+                  textLogo.className = "font-oswald text-3xl font-black tracking-tighter flex items-center text-white";
+                  textLogo.innerHTML = 'klikbl<span class="inline-block w-5 h-5 bg-[#C8101A] mx-[2px] rounded-sm transform rotate-3"></span>x';
+                  parent.appendChild(textLogo);
+                }
+              }}
+            />
           </Link>
         </div>
         

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -6,8 +7,25 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="font-oswald text-4xl font-black tracking-tighter flex items-center mb-4">
-              klikbl<span className="inline-block w-6 h-6 bg-brand-red mx-[2px] rounded-sm transform rotate-3"></span>x
+            <Link href="/" className="flex items-center mb-4">
+              <Image 
+                src="/logo.png" 
+                alt="Klikblox Logo" 
+                width={200} 
+                height={60} 
+                className="h-10 w-auto object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    const textLogo = document.createElement('span');
+                    textLogo.className = "font-oswald text-4xl font-black tracking-tighter flex items-center text-white";
+                    textLogo.innerHTML = 'klikbl<span class="inline-block w-6 h-6 bg-[#C8101A] mx-[2px] rounded-sm transform rotate-3"></span>x';
+                    parent.appendChild(textLogo);
+                  }
+                }}
+              />
             </Link>
             <p className="font-barlow text-gray-400 max-w-md mb-6 text-lg">
               Media berita independen Indonesia di universe Roblox. Thinker - Story Teller.
