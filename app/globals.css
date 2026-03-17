@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-brand-black: #0D0D0D;
+  --color-brand-red: #C8101A;
+  --color-brand-yellow: #FFD228;
+  --font-oswald: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+  --font-barlow: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-brand-black);
+  color: white;
+}
+
+.pixel-grid {
+  background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
